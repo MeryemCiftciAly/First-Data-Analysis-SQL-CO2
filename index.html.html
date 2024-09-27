@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="10ec4f4e-6826-80b2-8b0a-c1e64798efd8" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><h3 id="10ec4f4e-6826-80be-b95f-c0c4332e7b14" class=""><strong>Project Title: CO2 Emissions and Renewable Energy Analysis in OECD Countries</strong></h3><figure id="10ec4f4e-6826-8012-975e-ca5707334c2b" class="image"><a href="https://html.onlineviewer.net/Untitled_design_(3).jpg"><img style="width:700px" src="https://html.onlineviewer.net/Untitled_design_(3).jpg"/></a></figure><p id="10ec4f4e-6826-80eb-9a32-c769e39ee95b" class=""><strong>Author: </strong>Meryem Alyicia Çiftçi</p><p id="10ec4f4e-6826-80c0-be24-dff77c043ec0" class=""><strong>Role: Emerging Data Insights and Storyteller Analyst</strong></p><p id="10ec4f4e-6826-805d-84d4-fc15429e31b1" class=""><strong>Date:</strong> 8/28/2024</p><figure id="10ec4f4e-6826-807b-829e-fb79b1c3806f" class="image"><a href="https://www.notion.so/icons/chart-pie_green.svg"><img src="https://www.notion.so/icons/chart-pie_green.svg"/></a></figure><h3 id="10ec4f4e-6826-802a-be43-d9cb1eebd548" class=""><strong>Personal Context:</strong></h3><p id="10ec4f4e-6826-80bf-93ea-c784bf015f35" class="">This project is part of my journey to becoming a data analyst. As I build my expertise through learning platforms and practical exercises, I am using this dataset to practice SQL queries and enhance my skills in analyzing real-world data.</p><h3 id="10ec4f4e-6826-8013-aadd-feb493706ed8" class=""><strong>Data Source:</strong></h3><p id="10ec4f4e-6826-8068-89e6-e1063a5a67e7" class=""><em>Sourced from OECD Statistics. The data is publicly available for analysis on Kaggle under the title &quot;Environmental and Energy Policy Impacts: OECD.&quot;</em></p><h2 id="10ec4f4e-6826-8014-a6a2-f5aa0e614198" class=""><strong>Introduction to CO2 Emissions</strong></h2><p id="10ec4f4e-6826-800d-a545-e2c41c8b054f" class="">Videos: Flaticon.com</p><p id="10ec4f4e-6826-8034-a3a3-db1c2f4f982f" class=""><strong>CO2 emissions</strong> refer to the release of carbon dioxide (CO2) gas into the atmosphere, primarily through human activities. The major sources of CO2 emissions include the burning of fossil fuels (such as coal, oil, and natural gas) for energy production and transportation, as well as deforestation and industrial processes. Fossil fuel combustion releases CO2 as a byproduct, while deforestation decreases the number of trees that can absorb CO2 from the atmosphere.</p><p id="10ec4f4e-6826-8019-a0cb-f142eadc6a85" class=""><strong>Environmental Impact:</strong> CO2 is a significant greenhouse gas that contributes to global warming by trapping heat in the Earth&#x27;s atmosphere. This leads to a range of environmental issues, including rising global temperatures, melting ice caps, more frequent and severe weather events (such as hurricanes and droughts), and disruptions to ecosystems and biodiversity. Additionally, increased CO2 levels can contribute to air pollution, which has detrimental effects on human health.</p><hr id="10ec4f4e-6826-8090-8b6b-eb2aca053b05"/><h3 id="10ec4f4e-6826-80e2-8a03-e8412d90dce6" class=""><strong>The Importance of Addressing CO2 Emissions</strong></h3><p id="10ec4f4e-6826-80f2-9586-f2a6d3caa4f6" class="">Addressing CO2 emissions is crucial because they are a primary driver of climate change and global warming. The consequences of unchecked CO2 emissions include:</p><ul id="10ec4f4e-6826-8068-94f1-cd5919af9364" class="bulleted-list"><li style="list-style-type:disc"><strong>Climate Change:</strong> Increased global temperatures lead to more extreme weather patterns, rising sea levels, and disruptions to agriculture and water supplies.</li></ul><ul id="10ec4f4e-6826-80c5-94cc-cec2121e8acd" class="bulleted-list"><li style="list-style-type:disc"><strong>Health Impacts:</strong> Higher levels of air pollution can lead to respiratory issues, cardiovascular diseases, and other health problems in humans.</li></ul><ul id="10ec4f4e-6826-8075-bdd9-e2d5d28e23fc" class="bulleted-list"><li style="list-style-type:disc"><strong>Economic Costs:</strong> Climate-related disasters and health issues can result in significant economic losses and increased costs for disaster relief and healthcare.</li></ul><hr id="10ec4f4e-6826-8049-826d-fc731da8bb2f"/><h2 id="10ec4f4e-6826-80e6-906c-dbd33eccdaab" class=""><strong>Context of My Analysis</strong></h2><p id="10ec4f4e-6826-8066-81ae-fd4e8f238648" class="">Through this analysis, I aim to understand the impact of renewable energy adoption and the development of environmental technologies on CO2 emissions across OECD countries. Specifically, my focus is on:</p><ul id="10ec4f4e-6826-8005-959a-fea12d53b6d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Renewable Energy:</strong> Evaluating the percentage of total energy supply that comes from renewable sources, such as wind and solar energy, and how this correlates with CO2 emission levels.</li></ul><ul id="10ec4f4e-6826-80cb-9b3b-ebb1eff678b8" class="bulleted-list"><li style="list-style-type:disc"><strong>Development of Environmental Technologies:</strong> Analyzing the extent of technological advancements related to the environment, such as improvements in energy efficiency and new technologies aimed at reducing emissions.</li></ul><h2 id="10ec4f4e-6826-80da-bea3-f5bacfb60ac1" class=""><strong>By examining these factors, I seek to:</strong></h2><ul id="10ec4f4e-6826-80a9-863c-ca376b9c8a10" class="bulleted-list"><li style="list-style-type:disc"><strong>Identify Correlations:</strong> Determine if there is a relationship between higher renewable energy adoption and lower CO2 emissions and if advancements in environmental technologies contribute to more sustainable practices.</li></ul><ul id="10ec4f4e-6826-8002-b86a-c6f2a43256c4" class="bulleted-list"><li style="list-style-type:disc"><strong>Compare Regional Strategies:</strong> Assess how different regions, specifically Europe and America, are performing in terms of renewable energy and technological development, and how these factors influence their CO2 emissions.</li></ul><ul id="10ec4f4e-6826-802d-a4ae-d65116027765" class="bulleted-list"><li style="list-style-type:disc"><strong>Inform Policy and Practice:</strong> Provide insights into which strategies and technologies are most effective in reducing CO2 emissions, offering valuable information for policymakers and stakeholders working towards more sustainable energy and environmental practices.</li></ul><p id="10ec4f4e-6826-8057-b10a-f637de13a0d2" class="">Understanding these dynamics is crucial for developing effective strategies to combat climate change, promote sustainable energy use, and support the growth of technologies that benefit the environment. This analysis contributes to a broader understanding of how regional approaches to renewable energy and environmental technologies impact CO2 emissions and overall sustainability.</p><h3 id="10ec4f4e-6826-809e-8d23-cad238853066" class=""><strong>Questions Asked:</strong></h3><ul id="10ec4f4e-6826-8014-8a38-c64705f80910" class="bulleted-list"><li style="list-style-type:disc"><strong>Between Europe and America, who had the highest CO2 emissions and renewable energy contributions from 2000 to 2019?</strong></li></ul><ul id="10ec4f4e-6826-802f-84c6-d793dc7368b6" class="bulleted-list"><li style="list-style-type:disc"><strong>Secondary Questions relating to the period 2000 to 2019:</strong><ol type="1" id="10ec4f4e-6826-8046-ad9f-f8cfd23ad6dd" class="numbered-list" start="1"><li>Did CO2 emissions decrease as a result of increased renewable energy usage?</li></ol><ol type="1" id="10ec4f4e-6826-802b-8b8d-d0cdce79a0e9" class="numbered-list" start="2"><li>What percentage of developed technology related to renewable energy contributed to this reduction in CO2 emissions?</li></ol><ol type="1" id="10ec4f4e-6826-8046-b37f-de560aa5131d" class="numbered-list" start="3"><li>If technology development increased, what was the percentage or average advantage they gained as a result?</li></ol></li></ul><h2 id="10ec4f4e-6826-809a-b708-d8d67fbf45ce" class=""><strong>Preparing the data</strong></h2><p id="10ec4f4e-6826-8058-8b57-fc22f133fbb5" class="">I first needed to look at the raw data schema to understand the structure and values.</p><p id="10ec4f4e-6826-80e6-94b1-e57efda4e7a0" class="">Checking the data schema</p><figure id="10ec4f4e-6826-8088-80ef-e2fe488bc130" class="image"><a href="https://html.onlineviewer.net/Original_Data_Schema.png"><img style="width:700px" src="https://html.onlineviewer.net/Original_Data_Schema.png"/></a></figure><h2 id="10ec4f4e-6826-80a7-a74c-cbaf66af2271" class=""><strong>Challenge I Faced</strong></h2><p id="10ec4f4e-6826-80d3-b899-fbbd31f1e053" class="">Upon reviewing the schema, I discovered that all values in the dataset were initially imported as VARCHAR, including numerical data. This classification led to significant issues when attempting to cast these VARCHAR values to the appropriate numeric types (FLOAT or REAL) in SQL Server. Syntax errors frequently occurred during the conversion process.</p><p id="10ec4f4e-6826-8072-bc2e-cb0aabdd9da7" class=""><strong>To address this, I took the following steps:</strong></p><ol type="1" id="10ec4f4e-6826-8079-be6c-f24d0cc13787" class="numbered-list" start="1"><li><strong>Data Cleaning</strong>: I edited the raw CSV file directly to correct data types. Numerical values were reclassified as numbers, while non-numerical values (such as categorical data) were marked as text. This ensured that the data types were accurate before re-importing.</li></ol><ol type="1" id="10ec4f4e-6826-8084-867b-f32a687523a2" class="numbered-list" start="2"><li><strong>Re-importation</strong>: After correcting the CSV file, I re-imported the data into SQL Server. The dataset was then accurately classified with numerical values as REAL, non-numerical values as VARCHAR (specifically for ), and years as SMALLINT.<p id="10ec4f4e-6826-8057-a0d8-fdb6526d0348" class=""><code>OECD_Region</code></p></li></ol><ol type="1" id="10ec4f4e-6826-80e0-b114-eb01479efd00" class="numbered-list" start="3"><li><strong>Successful Query Execution</strong>: With the corrected data types, I was able to execute queries without encountering syntax errors. This allowed for accurate analysis of the dataset, including calculating averages for CO2 emissions and renewable energy supply.</li></ol><p id="10ec4f4e-6826-8046-82d0-f6fc187e86de" class="">This process ensured that the data was correctly interpreted and analyzed, leading to valid and reliable results.</p><p id="10ec4f4e-6826-8033-b010-e0765881e75c" class="">New schema query after cleaning the data</p><figure id="10ec4f4e-6826-80cb-9583-e0ffcfdb9d4d" class="image"><a href="https://html.onlineviewer.net/Step_1-_Checking_New__Schema.png"><img style="width:700px" src="https://html.onlineviewer.net/Step_1-_Checking_New__Schema.png"/></a></figure><p id="10ec4f4e-6826-8009-a493-dcb9dfd8c09a" class=""><strong>Data was converted, nevertheless, I needed to be sure. I began to search explicitly for numerical numbers.</strong></p><h2 id="10ec4f4e-6826-80a7-8a23-eea7d0b1542a" class=""><strong>Data Validation Summary</strong></h2><ul id="10ec4f4e-6826-80dd-9ff1-f35e0ad9f295" class="bulleted-list"><li style="list-style-type:disc"><strong>Verified Numeric Values</strong>: Ensured that all values in the columns intended for numeric analysis are indeed numeric. This was done by querying for any non-numeric entries and cleaning any discrepancies.</li></ul><ul id="10ec4f4e-6826-801e-8cf5-dfd7f73a8cc8" class="bulleted-list"><li style="list-style-type:disc"><strong>Columns Checked</strong>:<ul id="10ec4f4e-6826-80f8-89b1-de5e401ed989" class="bulleted-list"><li style="list-style-type:circle"><strong>Production-based CO2 emissions</strong></li></ul><ul id="10ec4f4e-6826-8092-96f8-eaf816a0f4b5" class="bulleted-list"><li style="list-style-type:circle"><strong>Renewable energy supply, % total energy supply</strong></li></ul><ul id="10ec4f4e-6826-80a0-a94a-cb9000a705be" class="bulleted-list"><li style="list-style-type:circle"><strong>Development of environment-related technologies, % all technologies</strong></li></ul><ul id="10ec4f4e-6826-80e6-a365-ec114e8d684c" class="bulleted-list"><li style="list-style-type:circle"><strong>Relative advantage in environment-related technology</strong></li></ul><p id="10ec4f4e-6826-80ab-ae50-e723d63c12a4" class="">Each column was reviewed to confirm that:</p><ul id="10ec4f4e-6826-800f-8f28-f30880aab705" class="bulleted-list"><li style="list-style-type:circle">There are no non-numeric characters.</li></ul><ul id="10ec4f4e-6826-8092-9577-e31f82d9ef14" class="bulleted-list"><li style="list-style-type:circle">The data can be successfully converted to numeric types.</li></ul></li></ul><p id="10ec4f4e-6826-80d4-8958-eb165e0526a4" class=""><strong>Data Cleaning</strong>: Addressed any issues found during the validation process to ensure the data is clean and ready for further analysis.</p><p id="10ec4f4e-6826-8063-9676-e80380bbcf4b" class="">Checking that columns had the correct value</p><figure id="10ec4f4e-6826-807b-9b97-f62703f630cb" class="image"><a href="https://html.onlineviewer.net/Checking_for_correct_values.png"><img style="width:700px" src="https://html.onlineviewer.net/Checking_for_correct_values.png"/></a></figure><p id="10ec4f4e-6826-80a0-b876-f812ef4db49c" class="">Checking which column has VARCHAR value</p><figure id="10ec4f4e-6826-806c-a76f-d5b51f0e9b4b" class="image"><a href="https://html.onlineviewer.net/Which_column_has_VARCHAR.png"><img style="width:700px" src="https://html.onlineviewer.net/Which_column_has_VARCHAR.png"/></a></figure><h1 id="10ec4f4e-6826-80ce-af18-e37958b6a871" class=""><strong>With The Data Prepared It’s Time For The Analysis To Begin</strong></h1><hr id="10ec4f4e-6826-8002-a19e-fb1fac3546ff"/><h2 id="10ec4f4e-6826-800a-9794-d6a35f5047fd" class=""><strong>Average CO2 Emissions Analysis</strong></h2><h3 id="10ec4f4e-6826-805a-8fd8-cf03477f5ac0" class=""><strong>Objective:</strong></h3><p id="10ec4f4e-6826-8096-90a5-dad6fa1f097a" class="">To compare the average CO2 emissions between different OECD regions from 2000 to 2019. This comparison helps in understanding which region has higher CO2 emissions over the specified period.</p><h3 id="10ec4f4e-6826-80c0-8d3e-d4d1736bd099" class=""><strong>Rationale:</strong></h3><ul id="10ec4f4e-6826-805c-b481-f1b2362339d8" class="bulleted-list"><li style="list-style-type:disc"><strong>Aggregate Data</strong>: The original dataset provided aggregate information on CO2 emissions without distinguishing between different years individually. Using averages allows me to obtain a clearer picture of the emissions trend over the years.</li></ul><ul id="10ec4f4e-6826-80f4-a542-df9a38ee7609" class="bulleted-list"><li style="list-style-type:disc"><strong>Clarity</strong>: Averages are used because they simplify the comparison between regions, highlighting which region consistently has higher CO2 emissions over the selected period.</li></ul><h3 id="10ec4f4e-6826-8040-9a95-ea1d229ce6ff" class=""><strong>SQL Query and Result Snapshot</strong></h3><p id="10ec4f4e-6826-8068-b6f8-fe9568906c68" class="">Below is the result of the query, showing the average CO2 emissions for each OECD region from 2000 to 2019:</p><figure id="10ec4f4e-6826-802b-9fa9-ff86d22b29fc" class="image"><a href="https://html.onlineviewer.net/Step_3-_Avg_CO2_Emission.png"><img style="width:700px" src="https://html.onlineviewer.net/Step_3-_Avg_CO2_Emission.png"/></a></figure><h3 id="10ec4f4e-6826-80bf-bf00-e720f26880d8" class=""><strong>Detailed Calculation:</strong></h3><ol type="1" id="10ec4f4e-6826-80a1-b481-c69d50be69ed" class="numbered-list" start="1"><li><strong>Filter Records</strong>: The  query filters the data to include only records from the year 2000 through 2019.<p id="10ec4f4e-6826-80a5-a615-d0690aad1f5a" class=""><code>WHERE Year BETWEEN 2000 AND 2019</code></p></li></ol><ol type="1" id="10ec4f4e-6826-80a5-a0db-ee0b89fed4af" class="numbered-list" start="2"><li><strong>Group Records</strong>: The  query groups the data by each region.<p id="10ec4f4e-6826-8049-ab18-da189c828efb" class=""><code>GROUP BY OECD_Region</code></p></li></ol><ol type="1" id="10ec4f4e-6826-80b2-a4a9-e20b9ee82a14" class="numbered-list" start="3"><li><strong>Compute Average</strong>: The  function calculates the average CO2 emissions for each region based on the selected years.<p id="10ec4f4e-6826-80bd-bcf2-e40838af0a08" class=""><code>AVG([Production-based_CO2_emissions])</code></p></li></ol><h3 id="10ec4f4e-6826-80ce-bcb2-dc8bc7b85eb7" class=""><strong>Clarification:</strong></h3><ul id="10ec4f4e-6826-80e9-98f8-d1c1f71674b5" class="bulleted-list"><li style="list-style-type:disc"><strong>Inclusive Years</strong>: The average is calculated for all years within the range 2000 to 2019, inclusive.</li></ul><ul id="10ec4f4e-6826-80e5-b834-de1c46c38319" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Aggregation</strong>: The query aggregates data across the entire period specified, providing a comprehensive average rather than an individual year’s snapshot.</li></ul><p id="10ec4f4e-6826-802c-8c1b-ce50dd8406e1" class="">👓</p><h3 id="10ec4f4e-6826-8097-acfe-d8f74cc15fd6" class=""><strong>Observation of CO2 Emissions</strong></h3><p id="10ec4f4e-6826-808d-8e9c-ecfd059ca09d" class="">From the query results of average production-based CO2 emissions between 2000 and 2019, it is evident that:</p><ul id="10ec4f4e-6826-80cf-b1cf-e2661e578624" class="bulleted-list"><li style="list-style-type:disc"><strong>America’s average CO2 emissions</strong> were approximately <strong>6371.72</strong>.</li></ul><ul id="10ec4f4e-6826-80e4-a2cf-d7419db4cb90" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe’s average CO2 emissions</strong> were approximately <strong>3763.68</strong>.</li></ul><p id="10ec4f4e-6826-800e-ba3f-f14ba51ce39a" class="">This indicates that, on average, America has higher production-based CO2 emissions compared to Europe during the analyzed period. This observation will serve as a foundation for further analysis and correlation in the conclusion section.</p><h2 id="10ec4f4e-6826-803c-b0a1-c2b465d1fe21" class=""><strong>Average Renewal Energy Supply as Percentage of Total Energy Supply Analysis</strong></h2><p id="10ec4f4e-6826-804c-bbd4-d7634b0ca5e9" class="">Image: Flaticon.com: B22RINCANTATION</p><figure id="10ec4f4e-6826-8049-b213-f8f9f932605c" class="image"><a href="https://html.onlineviewer.net/lightbulb.png"><img style="width:96px" src="https://html.onlineviewer.net/lightbulb.png"/></a></figure><h2 id="10ec4f4e-6826-80e1-b8d9-eabc0f3899b4" class=""><strong>Objective</strong></h2><p id="10ec4f4e-6826-80aa-9e33-ed39028ad529" class="">To determine the average percentage of renewable energy supply as a portion of total energy from 2000 to 2019 for both regions in the dataset.</p><h2 id="10ec4f4e-6826-801f-8e75-c22cea11138d" class=""><strong>Rationale</strong></h2><p id="10ec4f4e-6826-80ac-a120-c55f0e946e2e" class="">The purpose of calculating the average percentage of renewable energy supply is to understand the overall commitment to renewable energy over time in different regions. Comparing these averages will help assess how each region&#x27;s renewable energy efforts relate to their CO2 emissions results.</p><h2 id="10ec4f4e-6826-80ea-bf6f-f1446e055a06" class=""><strong>SQL Query and Results Snapshot Average Renewable Energy Supply Percentage of Total Energy Supply</strong></h2><h3 id="10ec4f4e-6826-8094-a0a5-d3f927b5244f" class=""></h3><figure id="10ec4f4e-6826-80b7-b47d-e13f00eb8ecd" class="image"><a href="https://html.onlineviewer.net/Avg_Renewable_Energy_Supply.png"><img style="width:700px" src="https://html.onlineviewer.net/Avg_Renewable_Energy_Supply.png"/></a></figure><h2 id="10ec4f4e-6826-8026-a6d1-cf4849bf28da" class=""><strong>Detailed Calculation</strong></h2><p id="10ec4f4e-6826-80e4-9d92-f64a9f8316ad" class="">This query calculates the average percentage of renewable energy supply from 2000 to 2019. It groups the data by the <code>OECD_Region</code> and computes the average for each region using the <code>AVG()</code> function. The <code>WHERE</code> clause filters the data to include only the years between 2000 and 2019.</p><h2 id="10ec4f4e-6826-80d6-ad8a-d735792ec800" class=""><strong>Clarification</strong></h2><ul id="10ec4f4e-6826-80f8-ba34-e112aa321a15" class="bulleted-list"><li style="list-style-type:disc"><code><strong>OECD_Region</strong></code>: This column identifies the region (e.g., Europe, America).</li></ul><ul id="10ec4f4e-6826-8022-87e9-e8eaeaa68634" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Renewable_energy_supply,_%_total_energy_supply</strong></code>: This column contains the percentage of total energy supply that comes from renewable sources.</li></ul><ul id="10ec4f4e-6826-8060-b43e-e6abf4af9a04" class="bulleted-list"><li style="list-style-type:disc"><code><strong>AVG()</strong></code><strong> Function</strong>: This function calculates the average of the values within the specified range.</li></ul><p id="10ec4f4e-6826-8011-a219-cd2c8159ea71" class="">👓</p><h3 id="10ec4f4e-6826-8028-934b-da00b53a7931" class=""><strong>Observation of Renewable Energy Supply</strong></h3><p id="10ec4f4e-6826-80ea-8550-cfccebd7b10d" class="">The calculated averages for renewable energy supply provide insight into each region&#x27;s overall renewable energy usage over the given period. By comparing these averages, I am able to identify whether there are significant differences in renewable energy adoption between regions. A marginal difference suggests consistent trends over the years, while a significant difference may indicate notable shifts or trends in renewable energy efforts. This comparison will further inform my understanding of the relationship between renewable energy adoption and CO2 emissions.</p><h1 id="10ec4f4e-6826-8022-a54a-e928bc65187d" class=""><strong>Average of Development of Environmental Technologies</strong></h1><figure id="10ec4f4e-6826-80f7-ba29-ed68abfe1710" class="image"><a href="https://html.onlineviewer.net/renewable-energy.png"><img style="width:72px" src="https://html.onlineviewer.net/renewable-energy.png"/></a></figure><p id="10ec4f4e-6826-8033-a5a8-e8125ae77ae0" class="">Image: Flaticon.com: B22RINCANTATION</p><h2 id="10ec4f4e-6826-8001-9771-e69ecec80335" class=""><strong>Objective</strong></h2><p id="10ec4f4e-6826-803f-adcd-c4d30e6afe67" class="">To compare the average development of environment-related technologies, measured as a percentage of all technologies, between different OECD regions from 2000 to 2019. This will help in understanding how each region&#x27;s focus on environmental technologies compares over time.</p><h2 id="10ec4f4e-6826-80bd-8838-d232a244b5bf" class=""><strong>Rationale</strong></h2><p id="10ec4f4e-6826-804d-b30e-d0598c3eb4e5" class="">The development of environment-related technologies is a crucial factor in addressing environmental challenges and sustainability. By comparing the average percentage of such technologies between regions, I am able to gauge which regions have prioritized environmental technology development and how their efforts align with overall technological advancement. This comparison provides insight into both region’s technological strategies and priorities.</p><h2 id="10ec4f4e-6826-8077-941f-db880d6ff774" class=""><strong>SQL Query and Results Snapshot Average Development of Environmental Technologies</strong></h2><figure id="10ec4f4e-6826-80e1-a222-c14d7b53e2c2" class="image"><a href="https://html.onlineviewer.net/Average_Development_of_Tech.png"><img style="width:700px" src="https://html.onlineviewer.net/Average_Development_of_Tech.png"/></a></figure><h2 id="10ec4f4e-6826-802a-a8d8-eba272fe77d6" class=""><strong>Detailed Calculation</strong></h2><p id="10ec4f4e-6826-8037-9c31-e8d67b47d19a" class="">The query calculates the average value of <code>Development_of_environment-related_technologies,_%_all_technologies</code> for each region over the years 2000 to 2019.</p><h2 id="10ec4f4e-6826-80a5-8322-c229ea1ac7cb" class=""><strong>Clarification</strong></h2><p id="10ec4f4e-6826-8041-a21f-c1ea47301fef" class="">The average value provides an aggregated measure of how much of all technologies developed in each region are related to environmental issues. This helps in assessing the region’s focus on environmental technology development.</p><h2 id="10ec4f4e-6826-80bd-a75f-daa83be3e822" class=""><strong>Observation of Development of Environmental Technology</strong></h2><p id="10ec4f4e-6826-8087-81f1-c46c617c99df" class="">👓</p><p id="10ec4f4e-6826-8013-a054-fb011e9ab543" class="">From the data, it can be observed that:</p><ul id="10ec4f4e-6826-801e-9ee1-e065a54fab86" class="bulleted-list"><li style="list-style-type:disc"><strong>America </strong>has an average development of environmental technologies of approximately 9.979500031471252</li></ul><ul id="10ec4f4e-6826-80a8-a96d-c1bf5861015b" class="bulleted-list"><li style="list-style-type:disc">Europe has an average development of environmental technologies of approximately 11.247000026702882</li></ul><p id="10ec4f4e-6826-80d0-aab1-d718ce3ad38c" class="">This observation indicates which regions are more or less focused on developing technologies related to environmental issues. Any significant differences or trends can provide insight into regional priorities and efforts in environmental technology advancement.</p><h1 id="10ec4f4e-6826-8063-a249-f7be9a789de5" class=""><strong>Average Advantage in Environmental Related Technologies</strong></h1><figure id="10ec4f4e-6826-8032-a229-d9e6218052c8" class="image"><a href="https://html.onlineviewer.net/advantages.png"><img style="width:72px" src="https://html.onlineviewer.net/advantages.png"/></a></figure><h2 id="10ec4f4e-6826-8058-aeec-cfa5b942780e" class=""><strong>Objective</strong></h2><p id="10ec4f4e-6826-80bb-8f0f-d029b181f8de" class="">To evaluate the relative advantage in environment-related technology between OECD regions from 2000 to 2019. This will provide insights into which regions have a comparative advantage in developing environmental technologies relative to other technology sectors.</p><h2 id="10ec4f4e-6826-802e-983b-ef0e747ca4fc" class=""><strong>Rationale</strong></h2><p id="10ec4f4e-6826-801d-af88-fda3e2635739" class="">The relative advantage in environment-related technologies is a measure of how advanced a region is in developing technologies focused on environmental solutions compared to its overall technological development. By comparing this value across regions, we can assess which regions are leading in environmental innovations and which might be lagging behind. This metric will help correlate environmental efforts with CO2 emissions and renewable energy trends, providing a more comprehensive view of each region’s environmental strategies.</p><h2 id="10ec4f4e-6826-8091-b1c7-e9da0f528f48" class=""><strong>SQL Query and Result Snapshot Average Advantage in Environmental Tech</strong></h2><figure id="10ec4f4e-6826-803a-b0ae-fa864a6a55d2" class="image"><a href="https://html.onlineviewer.net/Step_5-_Avg_Advantage_in_Env_Related_Tech.png"><img style="width:700px" src="https://html.onlineviewer.net/Step_5-_Avg_Advantage_in_Env_Related_Tech.png"/></a></figure><h2 id="10ec4f4e-6826-804a-a17e-ea13ded32799" class=""><strong>Detailed Calculation and Clarification</strong></h2><ul id="10ec4f4e-6826-8073-b54f-c5022b54ef65" class="bulleted-list"><li style="list-style-type:disc"><strong>Calculation</strong>: The query calculates the average relative advantage in environment-related technology for each region over the years 2000 to 2019. This gives an overall view of how well regions are advancing in environmental technology compared to other sectors.</li></ul><ul id="10ec4f4e-6826-80ab-b176-fb68c1bf563a" class="bulleted-list"><li style="list-style-type:disc"><strong>Clarification</strong>: The relative advantage measures how specialized a region is in environmental technology compared to the rest of its technological development. A higher value indicates a region’s focus on environmental innovation compared to general technological advancement.</li></ul><h2 id="10ec4f4e-6826-80cc-97c0-f92128ec118f" class=""><strong>Observation of the Average Relative Advantage in Environment-Related Technology</strong></h2><p id="10ec4f4e-6826-8072-bec3-c1d1eecb7d36" class="">👓</p><p id="10ec4f4e-6826-809b-b51e-f5f3e3bcaf94" class="">From the data query, I observe that:</p><ul id="10ec4f4e-6826-80a4-ae72-fb78620ab012" class="bulleted-list"><li style="list-style-type:disc"><strong>America</strong> shows an average relative advantage of 0.95 in environment-related technologies.</li></ul><ul id="10ec4f4e-6826-80f5-a778-db1f376ca99f" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe </strong>shows an average relative advantage of 1.07 in environment-related technologies.</li></ul><p id="10ec4f4e-6826-8040-822e-e5857ee0056e" class="">By correlating this with previous data on CO2 emissions and renewable energy supply:</p><ul id="10ec4f4e-6826-8052-a381-dd3f0b8cfd1f" class="bulleted-list"><li style="list-style-type:disc">Regions with higher relative advantage in environment-related technology may show lower CO2 emissions or higher renewable energy usage, indicating a potential link between technological focus and environmental outcomes.</li></ul><ul id="10ec4f4e-6826-80bc-9131-c2baf8b7ab30" class="bulleted-list"><li style="list-style-type:disc">Regions with lower relative advantage may not have prioritized environmental technology, which might explain higher CO2 emissions or less reliance on renewable energy.</li></ul><ul id="10ec4f4e-6826-80ae-a162-d4b6c936a7f2" class="bulleted-list"><li style="list-style-type:disc">A close average suggests comparable development levels, while significant differences could highlight varying degrees of progress.</li></ul><hr id="10ec4f4e-6826-8087-a939-d9384a4ef769"/><h1 id="10ec4f4e-6826-80d7-8693-df439601578c" class=""><strong>Data Insights and Analysis</strong></h1><h3 id="10ec4f4e-6826-80ff-95cb-c55789244a4d" class=""><strong>Introduction to CO2 Emissions</strong></h3><p id="10ec4f4e-6826-8039-b19f-e1537fa2a5fb" class="">CO2 emissions are a significant contributor to climate change, primarily originating from human activities such as the burning of fossil fuels, deforestation, and industrial processes. These emissions trap heat in the atmosphere, leading to global warming, extreme weather events, and air pollution. Over the years, efforts to reduce CO2 emissions have intensified, with a focus on renewable energy sources and environmental technologies.</p><h3 id="10ec4f4e-6826-80aa-a608-cf8a647e9aef" class=""><strong>The Importance of Addressing CO2 Emissions</strong></h3><p id="10ec4f4e-6826-8028-80bc-f40c012c4158" class="">Reducing CO2 emissions has become a critical global priority. Governments, private sectors, and environmental agencies worldwide are pushing for the adoption of renewable energy and the development of environment-related technologies. By analyzing the data on CO2 emissions in OECD countries, particularly comparing regions like Europe and America, we can evaluate the impact of these efforts and identify areas for improvement.</p><h3 id="10ec4f4e-6826-8078-9ffe-ccb19ad06599" class=""><strong>Link to My Analysis</strong></h3><p id="10ec4f4e-6826-8078-b6a0-f75393104ff2" class="">This project focuses on analyzing the impact of renewable energy and technological advancements on CO2 emissions. By correlating data from 2000 to 2019, this study explores whether these factors have contributed to reduced emissions in Europe and America. Additionally, the analysis provides insights into potential areas for future policy interventions and technological investment to improve environmental sustainability.</p><hr id="10ec4f4e-6826-8069-90ae-d66c3ed36f30"/><h1 id="10ec4f4e-6826-8036-bb71-e05a60adc112" class=""><strong>Data Queries and Observations</strong></h1><h2 id="10ec4f4e-6826-80d6-98e6-d499c616600e" class=""><strong>CO2 Emissions:</strong></h2><p id="10ec4f4e-6826-8041-a299-c7396db16514" class="">Using SQL queries, the data on CO2 emissions between 2000 and 2019 showed:</p><ul id="10ec4f4e-6826-807a-922b-f29af21db38a" class="bulleted-list"><li style="list-style-type:disc"><strong>America</strong> had an average CO2 emission of 6371.72 metric tons.</li></ul><ul id="10ec4f4e-6826-80eb-ba09-c11b8fa276b0" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe</strong> had an average CO2 emission of 3763.68 metric tons.</li></ul><p id="10ec4f4e-6826-80e1-9f1b-e71b60f41576" class="">This suggests that Europe has made significant strides in reducing CO2 emissions, with lower average emissions over the period, compared to America. These differences could be attributed to Europe&#x27;s environmental policies and its focus on renewable energy technologies.</p><hr id="10ec4f4e-6826-802e-bcf1-f89d0728a57c"/><h2 id="10ec4f4e-6826-80f3-b208-e600637802b0" class=""><strong>Renewable Energy Supply:</strong></h2><p id="10ec4f4e-6826-8050-9cde-e4864c10a321" class="">The analysis of renewable energy supply as a percentage of total energy revealed:</p><ul id="10ec4f4e-6826-803e-87b6-d0e7660d147d" class="bulleted-list"><li style="list-style-type:disc"><strong>America</strong> had an average renewable energy supply of 7.56%.</li></ul><ul id="10ec4f4e-6826-8013-b764-e4b2e865060e" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe</strong> had an average renewable energy supply of 10.73%.</li></ul><p id="10ec4f4e-6826-808c-9157-cc41f6376e8b" class="">This data points toward a higher adoption of renewable energy sources in Europe, further contributing to the lower CO2 emissions observed in the region.</p><hr id="10ec4f4e-6826-8067-a707-db6fcc40e81e"/><h2 id="10ec4f4e-6826-80bd-ab6f-efabe381bea9" class=""><strong>Development of Environment-Related Technologies:</strong></h2><p id="10ec4f4e-6826-8031-be40-cabcbeae32a1" class="">Regarding technological development:</p><ul id="10ec4f4e-6826-8037-af3b-cbadef595311" class="bulleted-list"><li style="list-style-type:disc"><strong>America</strong> had an average relative advantage of 9.97 in environment-related technologies.</li></ul><ul id="10ec4f4e-6826-8001-849b-cb348813306b" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe</strong> had an average relative advantage of 11.24.</li></ul><p id="10ec4f4e-6826-801d-9abc-e297e7d0b3f8" class="">Although Europe showed a higher relative advantage, the difference was marginal. This suggests comparable levels of technological development between the two regions, but Europe’s stronger focus on environmental technologies could be linked to its lower CO2 emissions.</p><hr id="10ec4f4e-6826-8096-ad44-fa282ea407d2"/><h2 id="10ec4f4e-6826-80eb-a86f-ca20d05761b6" class=""><strong>Average Relative Advantage in Environmental Technology</strong></h2><ul id="10ec4f4e-6826-801f-84d9-dd17c6d91f2e" class="bulleted-list"><li style="list-style-type:disc"><strong>America</strong> shows an average relative advantage of 0.9545.</li></ul><ul id="10ec4f4e-6826-80ef-8c58-d03d1e25e0b7" class="bulleted-list"><li style="list-style-type:disc"><strong>Europe</strong> shows an average relative advantage of 1.0790.</li></ul><hr id="10ec4f4e-6826-80fc-89fa-c8fa6c95ccf2"/><p id="10ec4f4e-6826-8024-a007-f2fbdcfa62d4" class="">
+</p><h1 id="10ec4f4e-6826-80b7-84d0-e2e49130303b" class=""><strong>Conclusion: Story Behind the Data</strong></h1><p id="10ec4f4e-6826-8009-89e7-d7e0f29e9e16" class=""><strong>Observation:</strong></p><p id="10ec4f4e-6826-806b-bb34-da89fecb89a8" class="">Europe has a slightly higher average relative advantage in environmental technology compared to America. This suggests that Europe might have a stronger focus or more effective capabilities in environmental technology.</p><p id="10ec4f4e-6826-8079-8e71-db7b96a1494a" class="">While Europe has a slightly higher development of environmental technology and a larger percentage of renewable energy compared to America, the relative advantage in reducing CO2 emissions remains marginal. This suggests that Europe&#x27;s overall energy consumption still relies heavily on non-renewable sources, limiting the impact of their advancements in environmental technology.</p><p id="10ec4f4e-6826-80ac-94b3-d2f247f95757" class=""> If renewable energy made up a greater portion of the total energy mix, the development of environmental technologies could play a more significant role in curbing CO2 emissions. Thus, it’s not solely the development of technology but the extent of its application across all energy sources that determines its effectiveness in reducing emissions.</p><p id="10ec4f4e-6826-801d-80f0-f26cedb1c6da" class="">In reflecting on this analysis, it becomes clear that while technological advancements in environment-related areas have an impact, government and corporate policies are equally essential. Countries prioritizing these policies can mitigate the negative effects of other technologies that contribute to CO2 emissions.</p><p id="10ec4f4e-6826-8075-af82-c990d6c753f5" class="">Additionally, other factors such as <strong>Municipal Waste Recycling</strong> and <strong>Population Density</strong> (available in the raw data) were not explored in this analysis but may also play a significant role in CO2 emissions. These factors could provide a more nuanced understanding and may be part of future studies.</p><h2 id="10ec4f4e-6826-8075-b06b-ec2b09b7d5e1" class=""><strong>Policy Implications:</strong></h2><p id="10ec4f4e-6826-801e-bcf6-c7ffd5759265" class="">The analysis highlights that technological development alone isn&#x27;t sufficient to reduce CO2 emissions. Policy decisions play a significant role. Regions can enhance their technological advantage by focusing on robust environmental policies that incentivize renewable energy adoption and regulate industrial emissions. For instance:</p><ul id="10ec4f4e-6826-803e-8d68-cb737c03e5c6" class="bulleted-list"><li style="list-style-type:disc">Policies encouraging the use of energy-efficient appliances for households could reduce overall energy consumption.</li></ul><ul id="10ec4f4e-6826-806b-8097-c3222f9db300" class="bulleted-list"><li style="list-style-type:disc">Industrial policies could limit the use of fossil fuels or offer financial incentives for companies adopting renewable energy.</li></ul><hr id="10ec4f4e-6826-80f8-94ba-d32f60ff9fdf"/><h2 id="10ec4f4e-6826-8023-a3ab-c89119ebb8dc" class=""><strong>Reflection on Learning</strong></h2><p id="10ec4f4e-6826-80fb-8ff9-e34774f89c59" class="">This project marks the beginning of my journey into data analysis. As my first project, I faced several challenges, such as cleaning the raw data and understanding initially understanding how to manipulate and troubleshoot through syntax error. Eventually, I began to get the hang of it. However, I gained valuable insights into SQL, data manipulation, and how real-world data can reveal patterns and trends that shape our understanding of global issues. This report represents my starting point, and I am eager to build upon it.</p><hr id="10ec4f4e-6826-8049-8b8e-d508b5e62d62"/><figure id="10ec4f4e-6826-80f3-8c8a-f3b05df76985" class="image"><a href="https://html.onlineviewer.net/worker.png"><img style="width:64px" src="https://html.onlineviewer.net/worker.png"/></a></figure><h2 id="10ec4f4e-6826-80bd-9943-ed78b398fe10" class=""><strong>Future Directions</strong></h2><p id="10ec4f4e-6826-80c1-a6ab-f04e48e2071a" class="">Looking ahead, I plan to extend this project by creating visualizations in Tableau, which will offer a more interactive exploration of the data. These visualizations will make the insights clearer and more accessible to a broader audience. Additionally, I will continue to develop my skills in <strong>R</strong>, data visualization, and advanced analytics, tackling more complex real-world problems as I grow in my career.</p><p id="10ec4f4e-6826-80a3-a784-f864c6ab5031" class=""><em>Above image by Flaticon</em></p><hr id="10ec4f4e-6826-801b-8322-dd776eeef3ae"/><h2 id="10ec4f4e-6826-802b-91ec-dbcb423acbde" class=""><strong>Looking Forward</strong></h2><figure id="10ec4f4e-6826-80bf-92cd-edadaf695e38" class="image"><a href="https://html.onlineviewer.net/coworking.png"><img style="width:144px" src="https://html.onlineviewer.net/coworking.png"/></a></figure><p id="10ec4f4e-6826-80c2-a204-f85738f5e92e" class=""><em>Image by Flaticon</em></p><p id="10ec4f4e-6826-80ea-ac48-f41f3c8c3006" class="">As a beginner in the data analytics field, this project showcases my ability to apply newly learned skills to real-world problems. My journey is ongoing, and I look forward to learning more, improving my methodologies, and using these skills to drive impactful solutions in a professional setting. I’m excited about the prospect of contributing to data-driven projects that make a difference, and I am eager to tackle more challenging analyses as I progress.</p><hr id="10ec4f4e-6826-8078-a8df-e9c61213d9d4"/><h2 id="10ec4f4e-6826-80f6-bffa-c3578bf72e18" class=""><strong>Final Note</strong></h2><p id="10ec4f4e-6826-80b0-963c-d8fd5695d751" class="">This report will be updated with data visualizations as I continue to advance my skills and tools on the path to becoming a proficient data analyst. Through ongoing learning, I aim to handle more complex issues and apply these insights to real-world challenges.</p><figure id="10ec4f4e-6826-80f9-9fdf-c2a3a014cd04" class="image"><a href="https://html.onlineviewer.net/SQL_Visual.png"><img style="width:500px" src="https://html.onlineviewer.net/SQL_Visual.png"/></a></figure><h1 id="10ec4f4e-6826-8005-bcb8-d2b63c929fc2" class=""><strong>Check the SQL Queries</strong></h1><p id="10ec4f4e-6826-806e-86ef-ea548148058f" class="">To see all the SQL queries in this report on GitHub, click <a href="https://github.com/MeryemCiftciAly/SQL-CO2-Analysis-">this link</a>.</p><figure id="10ec4f4e-6826-800e-ada6-f8a705cc1f99" class="image"><a href="https://html.onlineviewer.net/Data_Visual.png"><img style="width:500px" src="https://html.onlineviewer.net/Data_Visual.png"/></a></figure><h1 id="10ec4f4e-6826-805c-9335-dbadf927ed3c" class=""><strong>Data Visualization</strong></h1><p id="10ec4f4e-6826-8095-9ce5-f35580b841f1" class="">The report will be updated with the data visualization in Tableau once completed. Come back and check the <a href="https://html.onlineviewer.net/">link here</a>.</p><h1 id="10ec4f4e-6826-807b-aee8-f93caf82ed11" class=""><strong>Portfolio Website</strong></h1><p id="10ec4f4e-6826-8038-bd21-ed2a5f846338" class="">Come back and check out my personal profile website where I will showcase practice analysis and explore related codes on my GitHub page. You can visit my profile at <a href="https://meryemciftcialy.github.io/analyst-journal/">this link</a> to see more about my work.</p><figure id="10ec4f4e-6826-8087-9f3b-c5f26f0634f9" class="image"><a href="https://html.onlineviewer.net/Thank%20you%20screen%20shot.png"><img style="width:700px" src="https://html.onlineviewer.net/Thank%20you%20screen%20shot.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
